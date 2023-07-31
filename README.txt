@@ -14,7 +14,7 @@ df = pd.DataFrame(data[0])
 MY model_params DICTIONARY FOR GridSearchCV, WHICH IT FINDS TOO HEAVY AND UNBEARABLE TO EXECUTE --
 model_params ={
     'svm' : {
-        'model': SVC(max_iter= 1000, probability =True),
+        'model': SVC(max_iter= 1000, probability =True),s
         'parameters': {
             'svc__random_state': [5,10],
             'svc__gamma' :['scale', 'auto'],
@@ -49,3 +49,8 @@ model_params ={
          }
      }
  }
+ 
+ 
+ 
+* What is the lbfgs solver?
+lbfgs — Stands for Limited-memory Broyden–Fletcher–Goldfarb–Shanno. It approximates the second derivative matrix updates with gradient evaluations. It stores only the last few updates, so it saves memory. It isn't super fast with large data sets.
