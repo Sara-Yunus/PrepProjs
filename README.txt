@@ -1,56 +1,14 @@
-# bringing arff file to jupyter and using in dataFrame
-from scipy.io import arff
-import pandas as pd
+# PreparatoryProjects
 
-data = arff.loadarff(r' -path of arff file or link of raw arff file- ')
-df = pd.DataFrame(data[0])
+This repository is a collection of my projects capsulizing my practices and knowledge in Machine Learning modelling. 
 
-# The problem of unwanted format of categorical data from arff to dataframe is solved by 
-  1st - coverting arff to dataframe
-  2nd - converting that dataframe to csv 
-  This csv will now have right format of categorical data from arff file.
-  
-  
-MY model_params DICTIONARY FOR GridSearchCV, WHICH IT FINDS TOO HEAVY AND UNBEARABLE TO EXECUTE --
-model_params ={
-    'svm' : {
-        'model': SVC(max_iter= 1000, probability =True),s
-        'parameters': {
-            'svc__random_state': [5,10],
-            'svc__gamma' :['scale', 'auto'],
-            'svc__C' : [1,5,10,100],
-            'svc__kernel': ['rbf','linear']
-        }
-    },
-    'random_forest':{
-        'model': RandomForestClassifier(),
-        'parameters': {
-            'randomforestclassifier__random_state': [5,10],
-            'randomforestclassifier__n_estimators': [1,5,10],
-            'randomforestclassifier__criterion' : [ 'gini', 'entropy']
-        }
-    },
-    'logistic_regression' : {
-        'model': LogisticRegression(max_iter = 1000),
-        'parameters': {
-            'logisticregression__random_state': [5,10],
-            'logisticregression__solver': ['lbfgs', 'liblinear'],
-            'logisticregression__multi_class': ['auto', 'ovr'],
-            'logisticregression__C': [1,5,10] 
-        }
-    },
-     'decision_tree':{
-         'model': DecisionTreeClassifier(),
-         'parameters':{
-             'decisiontreeclassifier__random_state': [5,10],
-             'decisiontreeclassifier__criterion': ['gini', 'entropy'],
-             'decisiontreeclassifier__splitter':['best', 'random'],
-             'decisiontreeclassifier__min_samples_split': [ 10,50,100 ]
-         }
-     }
- }
- 
- 
- 
-* What is the lbfgs solver?
-lbfgs — Stands for Limited-memory Broyden–Fletcher–Goldfarb–Shanno. It approximates the second derivative matrix updates with gradient evaluations. It stores only the last few updates, so it saves memory. It isn't super fast with large data sets.
+# Dataset
+Datasets used in these Projects are taken from the dataset of a repository named clustering-benchmark.
+I forked this repository, clustering-benchmark so that one can find it in my Repositories section.
+
+All the raw data in the Dataset is in ARFF file type.
+To load these ARFF files in the notebook I used  
+```from scipy.io import arff```  to use them in a DataFrame. Although the data is workable only when in CSV format. So, after loading ARFF file in DataFrame, it needed to be converted to csv using ```to_csv()``` method of Pandas DataFrame.
+
+# Touch on
+I have incorporated all the estimators I know so far which can be used on these data to classify and predict. Summed up my work with the scores of every estimator and method used, and completed each of the projects with a model in a pickle or joblib file for my best estimator, and a JSON file.
