@@ -4,7 +4,7 @@ This repository is a collection of my projects capsulizing my practices and know
 
 # Dataset
 Datasets used in these Projects are taken from the dataset of a repository named clustering-benchmark.
-I forked this repository, clustering-benchmark so that one can find it in my Repositories section.
+I forked that repository so that one can find it in my Repositories section.
 
 All the raw data in the Dataset is in ARFF file type.
 To load these ARFF files in the notebook I used  
